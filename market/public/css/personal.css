@@ -1,0 +1,106 @@
+*{margin: 0;padding: 0;}
+#personal .head{
+    width: 100%;
+    background-color: #fff;
+    font-size: 2.5vh;
+    text-align: center;
+    padding: 2.3vh 0;
+    letter-spacing: 1px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    box-shadow: 0 5px 25px #8a0500;
+}
+
+/* 头像昵称部分 */
+#personal .person{
+    width: 100%;
+    height: 30vh;
+    background: url(../images/user/my/mybg.png) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    color: #fff;
+}
+#personal .person img{
+    width: 10vh;
+    border-radius: 50%;
+    position: absolute;
+    left: 3vh;
+    bottom: 3vh;
+}
+#personal .person p{
+    position: absolute;
+    left: 16vh;
+    bottom: 4vh;
+}
+#personal .person p span{display: block;margin: 1vh 0 0;font-size: 2vh;}
+
+/* 订单 */
+#personal .order{
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.5vh;
+    padding: 1.5vh 0;
+}
+#personal .order span{
+    margin: 0 2vh;
+}
+
+#personal .mylist{
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    margin: 1px 0 2vh;
+    padding: 2vh 0;
+    
+}
+#personal .mylist a{
+    color: #000;
+    font-size: 2vh;
+}
+#personal .mylist i{
+    display: block;
+    margin: 0 auto;
+    width: 3.5vh;
+    height: 3.5vh;
+}
+#personal .mylist a:first-child i{background: url(../images/user/my/pay.png); background-size: 100% 100%;}
+#personal .mylist a:nth-child(2) i{background: url(../images/user/my/shouhuo.png);background-size: 100% 100%;}
+#personal .mylist a:nth-child(3) i{background: url(../images/user/my/comment.png);background-size: 100% 100%;}
+
+/* 个人资料、收货地址···· */
+#personal .means{
+    background-color: #fff;
+    width: 100%;
+    height: 50vh;
+}
+#personal .means ul li{
+    border-bottom: 1px solid #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vh 0 4vh;
+    height: 5vh;
+}
+#personal .means ul li span{font-size: 2.5vh;}
+#personal .means ul li i{
+    display: block;
+    width: 2.5vh;
+    height: 2.5vh;
+    background: url(../images/home/goods/down.png) no-repeat;
+    background-size: 100% 100%;
+    transform: rotate(-90deg);
+}
+#personal .means a{
+    background-color: #ca0700;
+    display: block;
+    text-indent: 37%;
+    width: 80%;
+    margin: 3vh auto;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 2.5vh;
+    padding: 1vh 0;
+}

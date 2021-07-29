@@ -1,0 +1,329 @@
+*{margin: 0;padding: 0;}
+ul li,ol li{list-style-type: none;}
+body{background-color: #f2f2f2;}
+#head{
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    z-index: 4;
+}
+#head .back{
+    display: block;
+    width: 6vh;
+    height: 6vh;
+    background: url(../images/home/goods/back.png) no-repeat;
+    background-size: 100% 100%;
+}
+#head ol{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+}
+#head ol li{
+    font-size: 2.5vh;
+    line-height: 8vh;
+}
+#head span{
+    display: block;
+    margin-right: 1vh;
+    width: 6vh;
+    height: 6vh;
+    background: url(../images/home/goods/cart.png) no-repeat;
+    background-size: 100% auto;
+    position: relative;
+}
+#head span i{
+    display: inline-block;
+    width: 1.5vh;
+    height: 1.5vh;
+    background-color: rgb(195, 1, 1);
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 1vh;
+    display: none;
+}
+.fixed{height: 8vh;}
+.active{
+    border-bottom: 2px solid #fda208;
+}
+.cont{
+    display: none;
+}
+
+.swiper-slide img{
+    height: 50vh;
+    width: 100%;
+}
+#message{
+    background-color: #fff;
+    padding: 3vh 2vh;
+}
+#message .title{
+    font-size: 2vh;
+    margin: 1vh 0;
+}
+#message .price{
+    color: red;
+    
+}
+#message .num{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5vh;
+    color: #ccc;
+    margin: 1vh 0;
+}
+#assess{
+    margin: 4vh 0 6vh;
+    background-color: #fff;
+    padding: 2vh;
+}
+#assess p{
+    color: #555;
+    font-size: 2.5vh;
+    margin: 0 0 3vh;
+}
+
+#assess ul li:first-child img{
+    display: inline-block;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+    margin: 0 1vh 0 0 ;
+}
+#assess ul li:first-child{display: flex;align-items: center;font-size: 2.2vh;}
+#assess ul li span{color:#ccc;}
+#assess ul li{
+    font-size: 1.8vh;
+    margin: 1vh 0;
+}
+#assess button{
+    display: block;
+    margin: 3vh auto;
+    border: 1px solid #ff0000;
+    border-radius: 1vh;
+    padding: 1vh 2vh;
+    background-color: #fff;
+}
+#bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+#bottom span:first-child{
+    display: block;
+    width: 50%;
+    text-align: center;
+    background-color: #fcb40a;
+    padding: 2.5vh 0;
+    font-size: 3vh;
+}
+#bottom span:last-child{
+    display: block;
+    text-align: center;
+    width: 50%;
+    font-size: 3vh;
+    padding: 2.5vh 0;
+    background-color: #cc0004;
+}
+
+/* 购物遮罩层 */
+#tocart{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .4);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: none;
+}
+#tocart .main{
+    width: 100%;
+    height: 60vh;
+    background-color: #f2f2f2;
+    position: relative;
+    bottom: -110vh;
+    /* bottom: -40vh; */
+}
+#tocart .main .title{
+    background-color: #fff;
+    margin-bottom: 1px;
+    display: flex;
+    justify-content: space-around;
+    padding-right: 3vh;
+}
+#tocart .main .title img{
+    background-color: royalblue;
+    width: 6vh;
+    height: 6vh;
+    margin: 1.5vh;
+}
+#tocart .main .title p{
+    display: inline-block;
+    width: 70%;
+    font-size: 2vh;
+    margin: .5vh 0 0;
+}
+#tocart .main .title p span:first-child{
+    display: block;
+    height: 5.5vh;
+    overflow: hidden;
+}
+#tocart .main .title p span:last-child{
+    display: block;
+    color: red;
+}
+#tocart .main .title span:nth-child(3){
+    color: #777;
+    font-size: 1.8vh;
+    position: absolute;
+    top: 6.5vh;
+    right: 1vh;
+}
+#tocart .main i{
+    display: block;
+    width: 1vh;
+    height: 1vh;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    right: 1.5vh;
+    top: .5vh;
+}
+#tocart .main .line{
+    display: block;
+    width:1px;
+    height: 8vh;
+    background-color: #fff;
+    position: absolute;
+    right: 2vh;
+    top: -7vh;
+}
+#tocart .main .x{
+    width: 3vh;
+    position: absolute;
+    right: .4vh;
+    top: -8vh;
+}
+
+/* 选择颜色和尺寸 */
+#tocart .select{
+    background-color: #fff;
+    padding: 1.5vh;
+}
+#tocart .select p{
+    font-size: 2.5vh;
+    margin: 1vh 0;
+}
+#tocart .select span{
+    display: inline-block;
+    background-color: #f2f2f2;
+    border-radius: 1vh;
+    margin:0 0 1vh 1vh;
+    padding: .5vh 1vh;
+}
+#tocart .select .change{
+    background-color: #fda208;
+    color: #fff;
+}
+
+#num{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5vh;
+}
+#num input{
+    border: none;
+    outline: none;
+    background-color: #fff;
+    text-align: center;
+    margin: 0 1vh;
+}
+#num input:nth-child(2){
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    width: 6vh;
+}
+#num p{
+    display: block;
+    border: 1px solid #000;
+    border-radius: 1vh;
+    padding: 1vh;
+}
+#tocart .define{
+    background-color: #cc0004;
+    color: #fff;
+    width: 100%;
+    border: none;
+    font-size: 2.5vh;
+    padding: 1vh 0;
+    position: absolute;
+    bottom: 0;
+}
+#tocart .fine{
+    display: inline-block;
+    background: rgba(0, 0, 0, .4);
+    color: #fff;
+    border-radius: 1vh;
+    padding: .5vh 1vh;
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: none;
+}
+#no{
+    width: 100%;
+    height: 40vh;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+
+/* 评价页 */
+#more_assess{
+    background-color: #fff;
+    padding: 2vh;
+}
+
+#more_assess p{
+    color: #555;
+    font-size: 2.5vh;
+    margin: 0 0 3vh;
+}
+#more_assess ul li:first-child img{
+    display: inline-block;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+    margin: 0 1vh 0 0 ;
+}
+#more_assess ul li:first-child{display: flex;align-items: center;font-size: 2.2vh;}
+#more_assess ul li span{color:#ccc;}
+#more_assess ul li{
+    font-size: 1.8vh;
+    margin: 1vh 0;
+}
+
+/* 没有评论时 */
+#assess .notalk,#more_assess .notalk{
+    width: 100%;
+    text-align: center;
+    font-size: 3vh;
+    padding: 0 0 3vh;
+}

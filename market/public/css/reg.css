@@ -1,0 +1,124 @@
+*{margin: 0;padding: 0;}
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3vh;
+    padding: 1.8vh 0;
+    border-bottom: 1px solid #f2f2f2;
+    position: relative;
+}
+.header .back{
+    display: block;
+    width: 5vh;
+    height: 5vh;
+    background: url(../images/home/goods/back.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.test{
+    width: 90%;
+    margin: 3vh auto 0;
+    border: 1px solid #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.test input{
+    width: 70%;
+    height: 6vh;
+    font-size: 2vh;
+    border: none;
+    outline: none;
+    color: #666;
+    text-indent: 2vh;
+}
+.test .img{width: 20%;border-left: 1px solid #f2f2f2;}
+.test .img img{
+    width: 70%;
+    height: 3vh;
+    display: block;
+    margin: 0 auto;
+}
+.tele{
+    width: 90%;
+    height: 6vh;
+    margin: 3vh auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+.tele input:first-child{
+    border: 1px solid #f2f2f2;
+    outline: none;
+    font-size: 2vh;
+    color: #666;
+    text-indent: 2vh;
+    width: 65%;
+}
+.tele input:nth-child(2){
+    background-color: #f2f2f2;
+    color: rgb(87, 87, 87);
+    border: none;
+    font-size: 2vh;
+    width: 33%;
+}
+.code{
+    width: 90%;
+    margin: 3vh auto 0;
+    border: 1px solid #f2f2f2;
+}
+.code input{
+    outline: none;
+    border: none;
+    text-indent: 2vh;
+    height: 6vh;
+    width: 90%;
+}
+#password{
+    width: 90%;
+    margin: 3vh auto 0;
+    border: 1px solid #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#password input{
+    outline: none;
+    border: none;
+    text-indent: 2vh;
+    height: 6vh;
+    width: 70%;
+}
+#password p{
+    display: block;
+    margin-right: 2vh;
+    width: 8vh;
+    height: 4vh;
+    border: 1px solid #ccc;
+    border-radius: 2vh;
+    /* background-color: red; */
+}
+#password p span{
+    display: block;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+    box-shadow: 0 .5vh 1vh #a8a8a8;
+    background-color: #fff;
+    /* margin-left: 4vh; */
+}
+button{
+    display: block;
+    border: none;
+    background-color: #eb1625;
+    color: #fff;
+    border-radius: 5px;
+    width: 85%;
+    margin: 3vh auto 0;
+    font-size: 3vh;
+    padding: 1vh 0;
+}

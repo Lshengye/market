@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/personal.css">
+    <script src="../javascripts/axios.js"></script>
+    <script src="../javascripts/jquery3.3.1.js"></script>
+</head>
+
+<body>
+    <div id="Mark">
+        <!-- 选项卡一 -->
+        <div class="cont" style="display: block;" >
+            <!-- 顶部搜索栏 -->
+            <div id="top" class="change">
+                <a href="item.html"></a>
+                <p class="sear"><img src="../images/common/search.png" alt="">请输入宝贝名称</p>
+                <a href="login.html">登录</a>
+            </div>
+
+            <!-- 轮播图 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/home/index/banner_1.jpg"></div>
+                    <div class="swiper-slide"><img src="../images/home/index/banner_2.jpg"></div>
+                    <div class="swiper-slide"><img src="../images/home/index/banner_6.jpg"></div>
+
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- 分类栏 -->
+            <div id="item">
+                <a href="item.html"><i></i>潮流女装</a>
+                <a href="item.html"><i></i>品牌男装</a>
+                <a href="item.html"><i></i>电脑办公</a>
+                <a href="item.html"><i></i>手机数码</a>
+            </div>
+
+            <!-- 潮流女装 -->
+            <div id="women">
+                <p class="title">—— 潮流女装 ——</p>
+                <div class="boutique">
+                    <div class="goods_a tomore">
+                        <strong></strong>
+                        <p class="tip">精品打折<span>12.8元</span></p>
+                        <i></i>
+                    </div>
+                    <div class="goods_b">
+                        <div class="goods_b-list tomore">
+                            <p>
+                                <strong></strong>
+                                <span>品质精挑</span>
+                            </p>
+                            <i></i>
+                        </div>
+                        <div class="goods_b-list tomore">
+                            <p>
+                                <strong></strong>
+                                <span>品质精挑</span>
+                            </p>
+                            <i></i>
+                        </div>
+                    </div>
+                </div>
+                <ul class="women_list">
+                    <li class="tomore">
+                        <strong></strong>
+                        <i></i>
+                        <span></span>
+                        <s>￥576</s>
+                    </li>
+                    <li class="tomore">
+                        <strong></strong>
+                        <i></i>
+                        <span></span>
+                        <s>￥560</s>
+                    </li>
+                    <li class="tomore">
+                        <strong></strong>
+                        <i></i>
+                        <span></span>
+                        <s>￥600</s>
+                    </li>
+                    <li class="tomore">
+                        <strong></strong>
+                        <i></i>
+                        <span></span>
+                        <s>￥400</s>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 品牌男装 -->
+            <div id="men">
+                <p class="title">—— 品牌男装 ——</p>
+                <div class="boutique">
+                    <div class="goods menmore">
+                        <strong></strong>
+                        <p class="tip">火爆开售</p>
+                        <i></i>
+                    </div>
+                    <div class="goods menmore">
+                        <strong></strong>
+                        <p class="tip">火爆开售</p>
+                        <i></i>
+                    </div>
+                </div>
+                <ul class="men_list">
+                    <li class="menmore">
+                        <strong></strong>
+                        <i></i>
+                        <span></span>
+                        <s>￥138</s>
+                    </li>
+                    <li class="menmore">
+                        <strong></strong>
+                        <i></i>
+                        <span></span>
+                        <s>￥156</s>
+                    </li>
+                    <li class="menmore">
+                        <strong></strong>
+                        <i></i>
+                        <span></span>
+                        <s>￥238</s>
+                    </li>
+                    <li class="menmore">
+                        <strong></strong>
+                        <i></i>
+                        <span></span>
+                        <s>￥1556</s>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 电脑办公 -->
+            <div id="electric">
+                <p class="title">—— 电脑办公 ——</p>
+                <div class="boutique">
+                    <div class="goods_a elemore">
+                        <strong></strong>
+                        <p class="tip">精品打折<span></span></p>
+                        <i></i>
+                    </div>
+                    <div class="goods_b">
+                        <div class="goods_b-list elemore">
+                            <p>
+                                <strong></strong>
+                                <span>品质精挑</span>
+                            </p>
+                            <i></i>
+                        </div>
+                        <div class="goods_b-list elemore">
+                            <p>
+                                <strong></strong>
+                                <span>品质精挑</span>
+                            </p>
+                            <i></i>
+                        </div>
+                    </div>
+                </div>
+                <ul class="electric_list">
+                    <li class="elemore">
+                        <strong></strong>
+                        <i></i>
+                        <span>￥288</span>
+                        <s>￥298</s>
+                    </li>
+                    <li class="elemore">
+                        <strong></strong>
+                        <i></i>
+                        <span>￥288</span>
+                        <s>￥258</s>
+                    </li>
+                    <li class="elemore">
+                        <strong></strong>
+                        <i></i>
+                        <span>￥288</span>
+                        <s>￥56</s>
+                    </li>
+                    <li class="elemore">
+                        <strong> </strong>
+                        <i></i>
+                        <span>￥288</span>
+                        <s>￥216</s>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 为您推荐 -->
+            <div id="recom">
+                <p class="title">
+                    <span></span>
+                    <img src="../images/home/index/recom.png" alt="">
+                    为您推荐 
+                    <span></span>
+                </p>
+                <dl>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                    <dd class="remore">
+                        <i></i>
+                        <p></p>
+                        <span></span>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="fix"></div>
+
+        </div>
+        <!-- 选项卡二 -->
+        <div class="cont">
+            <p id="carthead">购物车</p>
+            <div id="goods">
+                <!-- <ul>
+                    <li><i></i></li>
+                    <li><img src="" alt=""><span>删除</span></li>
+                    <li>
+                        <p class="title">给hi的房价过快积分抵攻击敌人进攻愉快的结婚礼服他就会立刻推荐hi发</p>
+                        <p>颜色：<span class="color">紫的</span> 尺寸：<span class="size">24</span></p>
+                        <span class="price">￥12.8</span>
+                        <p id="count">
+                            <input class="less" type="button" value="-" />
+                            <input class="text" type="text" value="1" />
+                            <input class="add" type="button" value="+" />
+                        </p>
+                    </li>
+                </ul> -->
+            </div>
+
+            <div id="cartfoot">
+                <div class="select">
+                    <p>
+                        <span class="check"></span>全选
+                    </p>
+                    <p>
+                        运费: <span id="post">￥0</span>
+                        合计: <span id="sum">￥0</span>
+                    </p>
+                </div>
+                <a href="#"><span>去结算</span></a>
+            </div>
+        </div>
+
+        <!-- 选项卡三 -->
+        <div id="personal" class="cont">
+            <p class="head">个人中心</p>
+            <div class="person">
+                <img src="../images/user/my/default-head.png" alt="">
+                <p>
+                    <span>昵称</span>
+                    <span>我的积分：0</span>
+                </p>
+            </div>
+            <div class="order">
+                <span>全部订单</span>
+                <span>查看全部订单 > </span>
+            </div>
+            <div class="mylist">
+                <a href="#"><i></i>待支付</a>
+                <a href="#"><i></i>待收货</a>
+                <a href="#"><i></i>待评价</a>
+            </div>
+            <div class="means">
+                <ul>
+                    <li><span>个人资料</span> <i></i></li>
+                    <li><span>收货地址</span> <i></i></li>
+                    <li><span>绑定手机</span> <i></i></li>
+                    <li><span>修改密码</span> <i></i></li>
+                    <li><span>我的收藏</span> <i></i></li>
+                </ul>
+                <a href="login.html">登录/注册</a>
+            </div>
+        </div>
+        <ul id="bottom">
+            <li class="active">
+                <i></i>
+                <p>首页</p>
+            </li>
+            <li>
+                <i></i>
+                <p>购物车</p>
+            </li>
+            <li>
+                <i></i>
+                <p>我的</p>
+            </li>
+        </ul>
+    </div>
+
+
+    <script src="../javascripts/home.js"></script>
+    <script src="../javascripts/swiper-bundle.min.js"></script>
+    <script src="../javascripts/banner.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+*{margin: 0;padding: 0;font-size: 62.5%;}
+ul li{list-style-type: none;}
+a{text-decoration: none;}
+body{background-color: #f2f2f2;}
+
+#Mark #bottom{
+    width: 100%;position: fixed;bottom:-0.1vh;
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    background-color:#fff ;
+    box-shadow: 0 -5px 20px #f5f5f5;
+}
+#Mark .cont{
+    display: none;
+}
+#Mark .active{color: red;}
+
+#Mark #bottom li i{
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto;
+}
+#Mark #bottom li:first-child i{
+    background: url(../images/common/home2.png) no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+#Mark #bottom li:nth-child(2) i{
+    background: url(../images/common/cart1.png) no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+}
+#Mark #bottom li:nth-child(3) i{
+    background: url(../images/common/my1.png) no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+}
+
+#top{
+    width: 100%;
+    height: 5rem;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+.change{background-image: linear-gradient(red,rgba(0,0,0,0));}
+#top a:first-child{
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background: url(../images/common/class.png) no-repeat;
+    background-size: 100% 100%;
+}
+#top a:last-child{color: #fff;}
+#top .sear{
+    width: 70%;
+    color: #fff;
+    padding: .4rem 0;
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+    background: rgba(255, 255, 255, 0.5);
+}
+#top .sear img{width: 2rem;margin: 0 1rem;}
+
+.swiper-container .swiper-slide img{
+    width: 100%;
+    height: 100%;
+}
+
+#item{
+    margin: 1rem 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+#item a{
+    color: #777;
+    font-size: 1.3rem;
+}
+#item a i{
+    display: block;
+    margin: 0 auto 1rem;
+    width: 4rem;
+    height: 4rem;
+    background-size: 100% 100%;
+}
+
+/* 潮流女装 */
+#women{background-color: #fff;}
+#women .title{
+    font-size: 1.6rem;
+    color: #f73b61;
+    text-align: center;
+    padding: .5rem 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+#women strong{font-size: 1.4rem;white-space: nowrap;overflow: hidden;width: 90%;display: inline-block;}
+#women .boutique{
+    display: flex;
+    border-bottom: 1px solid #f2f2f2;
+}
+#women .boutique .tip{
+    text-align: left;
+    color: #cf3050;
+    padding-left: .6rem;
+    font-size: 1.4rem;
+}
+#women .boutique .tip span{
+    display: inline-block;
+    background-color: #f73b61;
+    color: #fff;
+    border-radius: 1rem;
+    padding: .1rem .2rem;
+    margin-left: 2rem;
+}
+#women .boutique .goods_a,#women .boutique .goods_b{
+    width: 49%;
+}
+#women .boutique .goods_a{
+    padding: 1rem 0 0;
+    text-align: center;
+    border-right: 1px solid #f2f2f2;
+}
+#women .boutique .goods_a i{display: block;width: 14rem;height: 10rem;margin: 1.5rem auto;background-size:100% 100% ;}
+#women .boutique .goods_b-list{
+    border-bottom: 1px solid #f2f2f2;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0 1.7rem;
+}
+#women .boutique .goods_b-list:last-child{border: none;}
+#women .boutique .goods_b-list p{width: 60%;}
+#women .boutique .goods_b-list span{
+    display: block;
+    color: #777;
+}
+#women .boutique .goods_b-list i{
+    display: inline-block;
+    margin-right: 1rem;
+    width: 6rem;
+    height: 6rem;
+    background-size:100% 100% ;
+}
+#women .women_list{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+#women .women_list li{
+    width: 24%;
+    border-right: 1px solid #f2f2f2;
+    padding: .5rem 0;
+}
+#women .women_list li strong{
+    font-size: 1.3rem;
+}
+#women .women_list li i{
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto;
+    background-size:100% 100% ;
+}
+#women .women_list li span{
+    display: block;
+    color: #cf3050;
+    margin: 0 auto;
+}
+
+/* 品牌男装 */
+#men{background-color: #fff;margin-top: 1rem;}
+#men .title{
+    font-size: 1.6rem;
+    color: #fe6719;
+    text-align: center;
+    padding: .5rem 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+#men strong{font-size: 1.4rem;white-space: nowrap;overflow: hidden;width: 90%;display: inline-block;}
+
+#men .boutique{
+    display: flex;
+    border-bottom: 1px solid #f2f2f2;
+}
+#men .boutique .tip{
+    color: #666666;
+    padding-left: .6rem;
+    font-size: 1.4rem;
+}
+
+#men .boutique .goods{
+    width: 49.7%;
+    padding: 1rem 0 0;
+    text-align: center;
+    border-right: 1px solid #f2f2f2;
+}
+#men .boutique .goods i{display: block;width: 14rem;height: 10rem;margin: 1.5rem auto;background-size: 100% 100%;}
+
+#men .men_list{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+#men .men_list li{
+    width: 25%;
+    border-right: 1px solid #f2f2f2;
+    padding: .5rem 0;
+    overflow: hidden;
+}
+#women .men_list li strong{
+    font-size: 1.3rem;
+}
+#men .men_list li i{
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto;
+    background-size: 100% 100%;
+}
+#men .men_list li span{
+    display: block;
+    color: #cf3050;
+    margin: 0 auto;
+}
+
+/* 电脑办公 */
+#electric{background-color: #fff;margin-top: 1rem;}
+#electric .title{
+    font-size: 1.6rem;
+    color: #5fc600;
+    text-align: center;
+    padding: .5rem 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+#electric strong{font-size: 1.4rem;white-space: nowrap;overflow: hidden;width: 90%;display: inline-block;}
+#electric .boutique{
+    display: flex;
+    border-bottom: 1px solid #f2f2f2;
+}
+#electric .boutique .tip{
+    text-align: left;
+    color: #cf3050;
+    padding-left: .6rem;
+    font-size: 1.4rem;
+}
+#electric .boutique .tip span{
+    display: inline-block;
+    background-color: #5fc600;
+    color: #fff;
+    border-radius: 1rem;
+    padding: .1rem 0;
+    margin-left: 2rem;
+}
+#electric .boutique .goods_a,#electric .boutique .goods_b{
+    width: 49%;
+}
+#electric .boutique .goods_a{
+    padding: 1rem 0 0;
+    text-align: center;
+    border-right: 1px solid #f2f2f2;
+}
+#electric .boutique .goods_a i{display: block;width: 14rem;height: 10rem;margin: 1.5rem auto; background-size: 100% 100%;}
+#electric .boutique .goods_b-list{
+    border-bottom: 1px solid #f2f2f2;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0 1.7rem;
+}
+#electric .boutique .goods_b-list:nth-child(2){
+    border-bottom: none;
+}
+#electric .boutique .goods_b-list p{width: 60%;}
+#electric .boutique .goods_b-list span{
+    display: block;
+    color: #777;
+}
+#electric .boutique .goods_b-list i{
+    display: inline-block;
+    margin-right: 1rem;
+    width: 6rem;
+    height: 6rem;
+    background-size: 100% 100%;
+}
+#electric .electric_list{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+#electric .electric_list li{
+    width: 24%;
+    border-right: 1px solid #f2f2f2;
+    padding: .5rem 0;
+}
+#electric .electric_list li strong{
+    font-size: 1.3rem;
+}
+#electric .electric_list li i{
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto;
+    background-size: 100% 100%;
+}
+#electric .electric_list li span{
+    display: block;
+    color: #cf3050;
+    margin: 0 auto;
+}
+
+/* 推荐 */
+#recom .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+#recom .title img{width: 2.5rem;}
+#recom .title span{
+    display: block;
+    background-color: #ccc;
+    width: 35%;
+    height: .1rem;
+}
+#recom dl{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#recom dl dd{
+    display: block;
+    width: 45%;
+    background-color: #fff;
+    margin: .5rem 0;
+    
+}
+#recom dl dd p{
+    font-size: 1.4rem;
+    height: 4rem;
+    line-height: 2rem;
+    overflow: hidden;
+}
+#recom dl dd span{font-size: 1.5rem; color: #cf3050;}
+#recom dl dd i{
+    display: block;
+    width: 14rem;
+    height: 14rem;
+    margin: .5rem auto;
+    background-size: 100% 100%;
+}
+
+
+.fix{
+    height: 7rem;
+}

@@ -1,0 +1,150 @@
+*{margin: 0;padding: 0;}
+ul li{list-style-type: none;}
+#carthead{
+    width: 100%;
+    background-color: #fff;
+    font-size: 2.2vh;
+    text-align: center;
+    padding: 2vh 0;
+    letter-spacing: 1px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+#cartfoot{
+    width: 100%;
+    height: 6vh;
+    position: fixed;
+    bottom: 9.7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#cartfoot a{
+    display: block;
+    width: 30%;
+    height: 100%;
+    background-color: #ccc;
+}
+#cartfoot a span{
+    color: #fff;
+    font-size: 2.5vh;
+    position: relative;
+    left: 25%;
+    top: 25%;
+}
+#cartfoot .select{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    background-color: #fff;
+}
+#cartfoot .select p{font-size: 2vh;display: flex;align-items: center;}
+#cartfoot .select .check{
+    display: inline-block; width: 2.5vh;
+    height: 2.5vh;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+#cartfoot .select span{color: red;margin: 0 1vh;}
+
+/* 商品部分 */
+#goods{
+    margin: 7.2vh 0 18vh;
+    width: 100%;
+}
+#goods ul{
+    height: 15vh;
+    background-color: #fff;
+    margin-bottom: 1vh;
+    display: flex;
+    padding:1.5vh;
+    justify-content: space-between;
+    align-items: center;
+}
+#goods ul li:first-child .bag{
+    background: #fff;
+    border: 1px solid #ccc;
+}
+#goods ul li:first-child{
+    width: 10%;
+    height: 100%;
+    line-height: 15vh;
+}
+#goods ul li:first-child i{
+    display: block;
+    width: 3vh;
+    height: 3vh;
+    border-radius: 50%;
+    margin-top: 5vh;
+    background: url(../images/home/cart/checkmark.png) no-repeat;
+    background-size: 100% 100%;
+}
+#goods ul li:nth-child(2){
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    color: #ccc;
+    font-size: 2vh;
+}
+#goods ul li:nth-child(2) img{
+    display: block;
+    width: 10vh;
+    height: 10vh;
+    margin: 1vh 0;
+}
+#goods ul li:last-child{
+    width: 70%;
+    padding-left: 2vh;
+    height: 100%;
+    position: relative;
+}
+#goods ul li:last-child .title{
+    width: 100%;
+    height: 5vh;
+    font-size: 2vh;
+}
+#goods ul li:last-child p:nth-child(2){
+    margin: 1vh 0;
+    height: 4vh;
+    font-size: 2vh;
+    line-height: 4vh;
+}
+#goods ul li:last-child p:nth-child(2) span{
+    margin: 0 1vh;
+    font-size: 2vh;
+}
+#goods ul li:last-child .price{
+    color: #cc0004;
+    font-size: 2.5vh;
+    margin: 1vh 0;
+}
+#count{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #000;
+    width: 14vh;
+    height: 4vh;
+    border-radius: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+}
+#count .less,#count .add{
+    background-color: #fff;
+    border: none;
+    width: 2vh;
+    margin: 0 1vh;
+}
+#count .text{
+    border: none;
+    outline: none;
+    text-align: center;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    width: 5vh;
+}

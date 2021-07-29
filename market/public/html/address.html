@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/address.css">
+    <script src="../javascripts/jquery3.3.1.js"></script>
+    <script src="https://cdn.bootcss.com/distpicker/2.0.3/distpicker.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <a class="back" href="#"></a>
+        <span>添加收货地址</span>
+    </div>
+    <ul class="add">
+        <li><span>收货人</span><input type="text" placeholder="收货人姓名" /></li>
+        <li><span>联系方式</span><input type="tele" placeholder="联系人手机号" /></li>
+        <li><span>所在区域</span><input type="text" placeholder="请选择所在地区" /></li>
+        <li><span>详细地址</span><input type="text" placeholder="街道详细地址" /></li>
+        <li><span>设置为默认地址</span><input type="checkbox" /></li>
+    </ul>
+    <button>保存</button>
+    <div data-toggle="distpicker">
+        <!-- container -->
+        <select></select><!-- 省 -->
+        <select></select><!-- 市 -->
+        <select></select><!-- 区 -->
+    </div>
+</body>
+
+</html>
