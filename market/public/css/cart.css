@@ -24,7 +24,7 @@ ul li{list-style-type: none;}
     display: block;
     width: 30%;
     height: 100%;
-    background-color: #ccc;
+    background-color: #ff0000;
 }
 #cartfoot a span{
     color: #fff;
@@ -45,7 +45,9 @@ ul li{list-style-type: none;}
 #cartfoot .select .check{
     display: inline-block; width: 2.5vh;
     height: 2.5vh;
-    border: 1px solid #ccc;
+    background: url(../images/home/cart/checkmark.png) no-repeat;
+    background-size: 100% 100%;
+    border: none;
     border-radius: 50%;
 }
 #cartfoot .select span{color: red;margin: 0 1vh;}

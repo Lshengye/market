@@ -138,6 +138,17 @@ body{background-color: #f2f2f2;}
     padding: 2.5vh 0;
     background-color: #cc0004;
 }
+/* #bottom p{
+    display: inline-block;
+    background: rgba(0, 0, 0, .4);
+    color: #fff;
+    border-radius: 1vh;
+    padding: .5vh 1vh;
+    position: fixed;
+    top: 45vh;
+    margin: 0 auto;
+    z-index: 12;
+} */
 
 /* 购物遮罩层 */
 #tocart{

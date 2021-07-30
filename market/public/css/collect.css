@@ -1,4 +1,5 @@
 *{margin: 0;padding: 0;}
+ul li{list-style-type: none;}
 .header{
     width: 100%;
     display: flex;
@@ -19,4 +20,41 @@
     left: 3%;
     top: 50%;
     transform: translateY(-50%);
+}
+#myshow{
+    padding: 2vh;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap row;
+    box-sizing: border-box;
+}
+#myshow ul{
+    width: 45%;
+    margin: 1vh 0;
+}
+#myshow ul li img{
+    width: 100%;
+    height: 25vh;
+    border: 1px solid #000;
+}
+#myshow ul li p{
+    width: 100%;
+    height: 5vh;
+    font-size: 2.5vh;
+}
+#myshow ul li:nth-child(2){
+    color: #ff0000;
+    font-size: 2vh;
+    margin: 1vh 0;
+}
+#myshow ul li:nth-child(3){
+    display: flex;
+    justify-content: space-between;
+}
+#myshow ul li:nth-child(3) span{
+    display: block;
+    color: #dd0000;
+    border: 1px solid #dd0000;
+    border-radius: 1vh;
+    padding: .5vh 1vh;
 }

@@ -17,6 +17,7 @@ function tab(id) {
 }
 tab('head'); // 顶部选项卡
 
+//接收数据并渲染
 var flag = window.localStorage.getItem("flag");
 console.log(flag)
 axios({
@@ -28,7 +29,7 @@ axios({
         document.querySelector('.swiper-wrapper').innerHTML += `
         <div class="swiper-slide"><img src="${res.data.data.images[i]}"></div>`;
     }
-    window.localStorage.setItem('img', res.data.data.images[0]);//传给购物车 133行
+    window.localStorage.setItem('img', res.data.data.images[0]);//传给购物车 126行
 
     $('#message .title').html(res.data.data.title)
     $('#message .price').html('￥' + res.data.data.price)
@@ -38,6 +39,27 @@ axios({
     $('#tocart .main .title p').before(`<img src="${res.data.data.images[0]}">`)
     $('#tocart .main .title p').html(`<p><span>${res.data.data.title}</span><span>￥${res.data.data.price}</span></p>`)
     $('#tocart .main .title span').eq(2).html('商品编码：' + flag)
+
+    //点击收藏
+    $('#bottom span').eq(0).click(function(){
+        let img=res.data.data.images[0];
+        let til=res.data.data.title;
+        let pri=res.data.data.price;
+        let ary=[img,til,pri]
+        let arys;
+        if('parameter' in localStorage){
+            try{
+                arys=JSON.parse(localStorage.getItem('parameter'));
+            }catch(error){
+                arys=localStorage.getItem('parameter');
+
+            }
+        }else{
+            arys=[];
+        }
+        arys.push(ary)
+        window.localStorage.setItem('arrey',JSON.stringify(arys))
+    })
 
 })
 
@@ -108,6 +130,7 @@ axios({
     Change('.color span')
     Change('.size span')
 
+    // 添加到购物车
     $('#tocart .define').click(function () {
         $('#head span i').show()
         $('#tocart .fine').fadeIn(200, function () {
@@ -129,7 +152,8 @@ axios({
             let c = $('#tocart .main .select .color .change').html();
             let s = $('#tocart .main .select .size .change').html();
             let n = $('#num .text').val();
-            let arrs=[];
+            let arrs;
+            
             if('parameter' in localStorage){
                 try{
                     arrs=JSON.parse(localStorage.getItem('parameter'));
@@ -139,15 +163,11 @@ axios({
             }else{
                 arrs=[];
             }
-            // arrs=arrs.split('')
-            console.log(typeof arrs)
             var arr = [m, t, p, c, s, n];
-            arrs.push(arr)
+            arrs.push(arr);
             console.log(typeof arrs)
             window.localStorage.setItem('parameter', JSON.stringify(arrs));
-            
             console.log(arrs)
-            
         }
     })
 })

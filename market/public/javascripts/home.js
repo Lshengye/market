@@ -210,9 +210,8 @@ $('#top .sear').click(function () {
 //第二页 购物车========================================
 var arr = JSON.parse(window.localStorage.getItem('parameter'))
 console.log(arr)
-var brr=window.localStorage.getItem('arr')
 $('#goods').html(arr.map((v) => {
-    return `<ul>
+    return `<ul class="hav">
 <li><i></i></li>
 <li><img src="${v[0]}" alt=""><span class="del">删除</span></li>
 <li>
@@ -227,27 +226,127 @@ $('#goods').html(arr.map((v) => {
 </li>
 </ul>`
 }))
+
+//删除
 for (let i = 0; i < $('#goods .del').length; i++) {
     $('#goods .del').eq(i).click(function () {
         $('#goods .del').eq(i).parent().parent().remove();
-        // console.log(i)
         arr.splice(i, 1)
-        console.log($('#goods .del').length)
-        // console.log(arr)
+        window.localStorage.setItem('parameter', JSON.stringify(arr))
+        Sum();
         console.log(arr)
     })
+
+}
+
+// 计算总价
+function Sum() {
+    var sum = 0;
+    for (let i = 0; i < $('#goods .hav').length; i++) {
+        let oprice = parseFloat($('#goods .hav .price').eq(i).html().split('￥')[1]) * parseFloat($('#goods .hav #count .text').eq(i).val())
+        // console.log(oprice)
+        sum = (sum + oprice);
+    }
+    $('#sum').html('￥' + sum.toFixed(2))
+    // console.log(sum.toFixed(2))
+}
+Sum();
+
+//数量加减
+for (let i = 0; i < $('#count .add').length; i++) {
+    $('#count .add').eq(i).click(function () {
+        let num = Number($('#count .text').eq(i).val());
+        $('#count .text').eq(i).val(num + 1);
+        Sum();
+        if ($('#count .text').eq(i).val() > 1) {
+            $('#count .less')[i].disabled = false;
+        }
+    })
+    // }
+    // for (let i = 0; i < $('#count .less').length; i++) {
+    if ($('#count .text').eq(i).val() == 1) {
+        $('#count .less')[i].disabled = true;
+    }
+    $('#count .less').eq(i).click(function () {
+        if ($('#count .text').eq(i).val() < 2) {
+            $('#count .less')[i].disabled = true;
+        } else {
+            let num = Number($('#count .text').eq(i).val());
+            $('#count .text').eq(i).val(num - 1);
+            Sum();
+        }
+    })
+}
+
+//选中和取消
+var off=true;
+for (let i = 0; i < $('#goods ul li i').length; i++) {
+    $('#goods ul li i').eq(i).click(function () {
+        if (off) {
+            $('#goods ul li i').eq(i).addClass('bag')
+            $('#goods ul').eq(i).removeClass('hav')
+            console.log(sum)
+            Sum();
+
+            $('#cartfoot .check').css({
+                'background': '#fff',
+                'border':'1px solid #ccc'
+            })
+            $('#cartfoot a').css('backgroundColor','#ccc')
+        }else{
+            $('#goods ul li i').eq(i).removeClass('bag')
+            $('#goods ul').eq(i).addClass('hav')
+            console.log(sum)
+            Sum();
+
+        }
+        if(!$('#goods ul li i').hasClass('bag')){
+            $('#cartfoot .check').css({
+                'background': 'url(../images/home/cart/checkmark.png) no-repeat',
+                'background-size': '100% 100%',
+                'border':'none'
+            })
+            $('#cartfoot a').css('backgroundColor','#ff0000')
+        }
+        off=!off;
+    })
+}
+//全选
+var aff=true;
+
+$('#cartfoot .check').click(function(){
     
-}
-for(let i=0;i<$('#goods .price').length;i++){
-    let a = $('#goods .price').eq(i).html().split('￥')[1]
-    var sum='';
-    sum += a;
-}
-$('#sum').html()
+    if(aff){
+        $('#cartfoot .check').css({
+            'background': '#fff',
+            'border':'1px solid #ccc'
+        })
+        $('#goods ul li i').addClass('bag')
+        $('#goods ul').removeClass('hav');
+        $('#cartfoot a').css('backgroundColor','#ccc')
+        Sum();
+    }else{
+        $('#cartfoot .check').css({
+            'background': 'url(../images/home/cart/checkmark.png) no-repeat',
+            'background-size': '100% 100%',
+            'border':'none'
+        })
+        $('#goods ul li i').removeClass('bag')
+        $('#goods ul').addClass('hav');
+        $('#cartfoot a').css('backgroundColor','#ff0000')
+        Sum();
+    }
+    aff=!aff;
+})
 
+console.log(arr.length)
 
-console.log(a)
-console.log($('#goods ul').length)
+//第三页 我的========================================
+$("#personal .means ul li").eq(4).click(function(){
+    window.location='collect.html'
+})
+var arys=JSON.parse(window.localStorage.getItem('arrey'));
+console.log(arys)
 
 
 
