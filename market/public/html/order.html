@@ -1,30 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/order.css">
+    <script src="../javascripts/axios.js"></script>
+    <script src="../javascripts/jquery3.3.1.js"></script>
 </head>
+
 <body>
     <div class="header">
-        <a class="back" href="suit.html"></a>
-        <span>全部订单</span>
+        <a class="back" href="index.html?type=1"></a>
+        <span>确认订单</span>
     </div>
-    <div id="main">
-        <ul>
-            <li class="active">全部订单</li>
-            <li>待付款</li>
-            <li>待收货</li>
-            <li>待评价</li>
+    <div id="address">
+        <div class="place">
+            <p class="address-null">收货地址为空，点击添加收货地址</p>
+            <i class="to"></i>
+        </div>
+        <p class="line">
+            <span class="a"></span>
+            <span class="b"></span>
+            <span class="a"></span>
+            <span class="b"></span>
+            <span class="a"></span>
+            <span class="b"></span>
+            <span class="a"></span>
+            <span class="b"></span>
+            <span class="a"></span>
+            <span class="b"></span>
+        </p>
+    </div>
+    <div id="product">
+        <ul class="hav">
+            <li><img src="" alt=""></li>
+            <li>
+                <p class="title">很艰苦环境法国航空的符合国家开得飞快就快点恢复高考的回复几个</p>
+                <p>颜色：<span class="color"></span> 尺码：<span class="size"></span></p>
+                <span class="num">x 2</span>
+                <span class="price"></span>
+            </li>
         </ul>
-        <div class="cont" style="display: block;">111</div>
-        <div class="cont">222</div>
-        <div class="cont">333</div>
-        <div class="cont">444</div>
+    </div>
+    <p class="total"><span>商品总额</span><span>￥305.6</span></p>
+    <p class="post"><span>运费</span><span>￥20</span></p>
+    <div id="submit">
+        <p>实际金额：<span class="all-money">￥325.6</span></p>
+        <span>提交订单</span>
     </div>
 
     <script src="../javascripts/order.js"></script>
 </body>
+
 </html>

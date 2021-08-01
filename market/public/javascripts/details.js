@@ -17,6 +17,17 @@ function tab(id) {
 }
 tab('head'); // 顶部选项卡
 
+//跳转至购物车
+$('#head span').click(()=>{
+    window.location.href='index.html?type=1'
+})
+//查看评价
+$('#assess button').click(()=>{
+    $('#head li').eq(2).addClass('active').siblings().removeClass('active');
+    $('.cont').css('display', 'none')
+    $('.cont').eq(2).css('display', 'block')
+})
+
 //接收数据并渲染
 var flag = window.localStorage.getItem("flag");
 console.log(flag)
@@ -30,6 +41,7 @@ axios({
         <div class="swiper-slide"><img src="${res.data.data.images[i]}"></div>`;
     }
     window.localStorage.setItem('img', res.data.data.images[0]);//传给购物车 126行
+    window.localStorage.setItem('post',res.data.data.freight);//快递费
 
     $('#message .title').html(res.data.data.title)
     $('#message .price').html('￥' + res.data.data.price)
@@ -42,16 +54,25 @@ axios({
 
     //点击收藏
     $('#bottom span').eq(0).click(function(){
+        $('#bottom-tip').fadeIn(200, function () {
+            $(this).css('display', 'block')
+        })
+            .delay(1000)
+        $('#bottom-tip').fadeOut(1000, function () {
+            $(this).css('display', 'none')
+        })
+
         let img=res.data.data.images[0];
         let til=res.data.data.title;
         let pri=res.data.data.price;
-        let ary=[img,til,pri]
+        let ary=[flag,img,til,pri]
         let arys;
-        if('parameter' in localStorage){
+        console.log(ary)
+        if('arrey' in localStorage){
             try{
-                arys=JSON.parse(localStorage.getItem('parameter'));
+                arys=JSON.parse(localStorage.getItem('arrey'));
             }catch(error){
-                arys=localStorage.getItem('parameter');
+                arys=localStorage.getItem('arrey');
 
             }
         }else{
@@ -152,6 +173,7 @@ axios({
             let c = $('#tocart .main .select .color .change').html();
             let s = $('#tocart .main .select .size .change').html();
             let n = $('#num .text').val();
+            let post=window.localStorage.getItem('post')
             let arrs;
             
             if('parameter' in localStorage){
@@ -163,7 +185,7 @@ axios({
             }else{
                 arrs=[];
             }
-            var arr = [m, t, p, c, s, n];
+            var arr = [m, t, p, c, s, n,post];
             arrs.push(arr);
             console.log(typeof arrs)
             window.localStorage.setItem('parameter', JSON.stringify(arrs));
@@ -171,6 +193,11 @@ axios({
         }
     })
 })
+
+if(JSON.parse(window.localStorage.getItem('parameter')).length!=0){
+    $('#head span i').show()
+}
+
 
 //购物遮罩层
 $('#bottom span').eq(1).click(function () {

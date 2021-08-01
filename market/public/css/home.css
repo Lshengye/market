@@ -34,8 +34,23 @@ body{background-color: #f2f2f2;}
     background: url(../images/common/cart1.png) no-repeat;
     background-position: center;
     background-size: 100% 100%;
-
 }
+#Mark #bottom li:nth-child(2){
+    position: relative;
+}
+/* 提示红点 */
+#Mark #bottom li:nth-child(2) .dot{
+    display: block;
+    width: 1.5vh;
+    height: 1.5vh;
+    background-color: #ff0000;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: -1vh;
+    display: none;
+}
+
 #Mark #bottom li:nth-child(3) i{
     background: url(../images/common/my1.png) no-repeat;
     background-position: center;

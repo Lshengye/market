@@ -20,19 +20,16 @@ ul li{list-style-type: none;}
     justify-content: space-between;
     align-items: center;
 }
-#cartfoot a{
+#cartfoot button{
     display: block;
     width: 30%;
     height: 100%;
     background-color: #ff0000;
-}
-#cartfoot a span{
     color: #fff;
     font-size: 2.5vh;
-    position: relative;
-    left: 25%;
-    top: 25%;
+    border: none;
 }
+
 #cartfoot .select{
     display: flex;
     justify-content: space-between;

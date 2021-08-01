@@ -122,3 +122,14 @@ button{
     font-size: 3vh;
     padding: 1vh 0;
 }
+.tip{
+    background: rgba(0, 0, 0, .4);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    border-radius: 1vh;
+    padding: .5vh 2vh;
+    display: none;
+}

@@ -9,12 +9,16 @@
 </head>
 <body>
     <div class="header">
-        <a class="back" href="#"></a>
+        <a class="back" href="index.html?type=2"></a>
         <span>收货地址管理</span>
     </div>
     <div id="btm">
         <button>+ 添加新地址</button>
     </div>
-    
+    <script>
+        document.querySelector('#btm button').onclick=function(){
+            window.location='address.html'
+        }
+    </script>
 </body>
 </html>

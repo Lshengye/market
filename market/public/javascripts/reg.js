@@ -1,3 +1,4 @@
+
 function Switch(name) {
     var pass = document.getElementById(name);
     var btn = pass.getElementsByClassName('switch')[0];
@@ -19,13 +20,12 @@ function Switch(name) {
         off = !off;
     }
 }
-
 Switch('password');
 
 function Timer(id) {
     let btn = document.getElementById(id);
     let time = 10;
-    btn.disabled=true;
+    btn.disabled = true;
     // console.log(tele.value.length)
     btn.onclick = function aa() {
         if (time > 0) {
@@ -42,30 +42,58 @@ function Timer(id) {
         }
     }
     let tele = document.getElementById('tele');
-    let test=document.getElementById('test');
-    test.onfocus = function () {
-        tele.onkeyup = function () {
-            if (tele.value.length == 11&&test.value!='') {
-                btn.style.border = '1px solid red';
-                btn.style.backgroundColor = '#fff';
-                btn.style.color = '#ff0000';
-                btn.disabled = false;
-            } else {
-                btn.disabled = true;
-                btn.style.border = 'none';4
-                btn.style.backgroundColor = '#f2f2f2';
-                btn.style.color='rgb(87, 87, 87)'
-            }
+    tele.onkeyup = function () {
+        if (tele.value.length == 11) {
+            btn.style.border = '1px solid red';
+            btn.style.backgroundColor = '#fff';
+            btn.style.color = '#ff0000';
+            btn.disabled = false;
+        } else {
+            btn.disabled = true;
+            btn.style.border = 'none';
+            btn.style.backgroundColor = '#f2f2f2';
+            btn.style.color = 'rgb(87, 87, 87)'
         }
     }
 
 }
 Timer('check');
 
-var img=document.getElementsByClassName('img')[0];
-img.onclick=function(){
+var img = document.getElementsByClassName('img')[0];
+img.onclick = function () {
     window.location.reload();
 }
+
+
+$('#submit').click(() => {
+    setTimeout(() => {
+        $('.tip').hide();
+    },2000);
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "http://vueshop.glbuys.com/api/home/user/reg?token=1ec949a15fb709370f",
+        data: {
+            'cellphone': $('#tele').val(),
+            'password': $('#password input').val(),
+        },
+        success: function (data) {
+            if (data.code == 302) {
+                console.log(data);
+                $('.tip').show().html(data.data);
+            } else if ($('.code input').val() == '') {
+                $('.tip').show().html('请输入手机验证码');
+            } else {
+                console.log(data);
+                $(location).prop('href', 'http://localhost:3000/html/login.html')
+            }
+        }
+    })
+    
+})
+
+
+
 
 
 

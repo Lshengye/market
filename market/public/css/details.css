@@ -138,17 +138,19 @@ body{background-color: #f2f2f2;}
     padding: 2.5vh 0;
     background-color: #cc0004;
 }
-/* #bottom p{
+#bottom-tip{
     display: inline-block;
-    background: rgba(0, 0, 0, .4);
+    background: rgba(0, 0, 0, .6);
     color: #fff;
     border-radius: 1vh;
     padding: .5vh 1vh;
     position: fixed;
-    top: 45vh;
-    margin: 0 auto;
-    z-index: 12;
-} */
+    top: 50vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+    display: none;
+}
 
 /* 购物遮罩层 */
 #tocart{

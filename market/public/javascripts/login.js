@@ -24,5 +24,36 @@ Switch('password');
 
 var back=document.getElementsByClassName('back')[0];
 back.onclick=function(){
-    window.location='suit.html';
+    window.history.back();
 }
+
+$('#submit').click(()=>{
+    setTimeout(() => {
+        $('.talk').hide();
+    },2000);
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "http://vueshop.glbuys.com/api/home/user/pwdlogin?token=1ec949a15fb709370f",
+        data: {
+            'cellphone': $('#tele').val(),
+            'password': $('#password input').val(),
+        },
+        success: function (data) {
+            if (data.code == 302) {
+                console.log(data);
+                $('.talk').show().html(data.data);
+            } else if ($('.password input').val() == '') {
+                $('.talk').show().html(data.data);
+            } else {
+                console.log(data);
+                let rem=[];
+                rem.push(data.data.auth_token)
+                rem.push(data.data.nickname)
+                rem.push(data.data.uid)
+                window.localStorage.setItem('member',JSON.stringify(rem))
+                $(location).prop('href', 'http://localhost:3000/html/index.html?type=2')
+            }
+        }
+    })
+})

@@ -43,5 +43,6 @@ $('.header span').eq(1).click(function () {
     }
 })
 
-
+var member=JSON.parse(window.localStorage.getItem('member'))
+$('.name p input').val(member[1])
 

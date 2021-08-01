@@ -1,36 +1,48 @@
-// const { url } = require("koa-router");
 
-function tab(id) {
-    var oBtm = document.getElementById(id);
-    var oli = oBtm.getElementsByTagName('li');
-    var ai = oBtm.getElementsByTagName('i');
-    var ocont = document.getElementsByClassName('cont');
-    for (var i = 0; i < oli.length; i++) {
-        oli[i].index = i;
-        oli[i].onclick = function () {
-            for (var j = 0; j < oli.length; j++) {
-                oli[j].className = '';
-                ocont[j].style.display = 'none';
-            }
-            this.className = 'active';
-            ocont[this.index].style.display = 'block';
-            if (this.index == 0) {
-                ai[0].style.backgroundImage = 'url(../images/common/home2.png)';
-                ai[1].style.backgroundImage = 'url(../images/common/cart1.png)';
-                ai[2].style.backgroundImage = 'url(../images/common/my1.png)';
-            } else if (this.index == 1) {
-                ai[0].style.backgroundImage = 'url(../images/common/home1.png)';
-                ai[2].style.backgroundImage = 'url(../images/common/my1.png)';
-                ai[1].style.backgroundImage = 'url(../images/common/cart2.png)';
-            } else {
-                ai[0].style.backgroundImage = 'url(../images/common/home1.png)';
-                ai[1].style.backgroundImage = 'url(../images/common/cart1.png)';
-                ai[2].style.backgroundImage = 'url(../images/common/my2.png)';
-            }
-        }
+//选项卡
+for(let i=0;i<$('#bottom li').length;i++){
+    $('#bottom li').eq(i).click(()=>{
+        $('#bottom li').eq(i).addClass('active').siblings().removeClass('active');
+    $('#Mark .cont').css('display', 'none')
+    $('#Mark .cont').eq(i).css('display', 'block')
+    history.pushState('','','?type='+i)
+    if (i == 0) {
+        $('#bottom i').eq(0).css('backgroundImage', 'url(../images/common/home2.png)');
+        $('#bottom i').eq(1).css('backgroundImage', 'url(../images/common/cart1.png)');
+        $('#bottom i').eq(2).css('backgroundImage', 'url(../images/common/my1.png)');
+    } else if (i == 1) {
+        $('#bottom i').eq(0).css('backgroundImage', 'url(../images/common/home1.png)');
+        $('#bottom i').eq(2).css('backgroundImage', 'url(../images/common/my1.png)');
+        $('#bottom i').eq(1).css('backgroundImage', 'url(../images/common/cart2.png)');
+    } else {
+        $('#bottom i').eq(0).css('backgroundImage', 'url(../images/common/home1.png)');
+        $('#bottom i').eq(1).css('backgroundImage', 'url(../images/common/cart1.png)');
+        $('#bottom i').eq(2).css('backgroundImage', 'url(../images/common/my2.png)');
     }
+    })
 }
-tab('bottom');
+$(document).ready(() => {
+    let type = location.href;
+    console.log(type)
+    type = type.split('?')[1].split('=');
+    $('#bottom li').eq(type[1]).addClass('active').siblings().removeClass('active');
+    $('#Mark .cont').css('display', 'none')
+    $('#Mark .cont').eq(type[1]).css('display', 'block')
+    if (type[1] == 0) {
+        $('#bottom i').eq(0).css('backgroundImage', 'url(../images/common/home2.png)');
+        $('#bottom i').eq(1).css('backgroundImage', 'url(../images/common/cart1.png)');
+        $('#bottom i').eq(2).css('backgroundImage', 'url(../images/common/my1.png)');
+    } else if (type[1] == 1) {
+        $('#bottom i').eq(0).css('backgroundImage', 'url(../images/common/home1.png)');
+        $('#bottom i').eq(2).css('backgroundImage', 'url(../images/common/my1.png)');
+        $('#bottom i').eq(1).css('backgroundImage', 'url(../images/common/cart2.png)');
+    } else {
+        $('#bottom i').eq(0).css('backgroundImage', 'url(../images/common/home1.png)');
+        $('#bottom i').eq(1).css('backgroundImage', 'url(../images/common/cart1.png)');
+        $('#bottom i').eq(2).css('backgroundImage', 'url(../images/common/my2.png)');
+    }
+})
+
 
 // 顶部
 window.onscroll = function () {
@@ -44,15 +56,14 @@ window.onscroll = function () {
 
 }
 
-
+//分类导航
 axios({
     method: 'GET',
     url: 'http://vueshop.glbuys.com/api/home/index/nav?token=1ec949a15fb709370f'
 }).then((res) => {
-    var oitem = document.getElementById('item');
-    var oi = oitem.getElementsByTagName('i');
-    for (var i = 0; i < oi.length; i++) {
-        oi[i].style.backgroundImage = 'url(' + res.data.data[i].image + ')';
+    for (var i = 0; i < $('#item i').length; i++) {
+        $('#item i').eq(i).css('backgroundImage','url(' + res.data.data[i].image + ')');
+
     }
 });
 
@@ -124,11 +135,7 @@ axios({
     // console.log(res);
 });
 
-var Sorder = document.querySelectorAll('#personal .order span')[1];
-Sorder.onclick = function () {
-    window.location = 'order.html';
-}
-
+//个人资料
 var profile = document.getElementById('personal');
 var means = profile.getElementsByClassName('means')[0];
 var toFile = means.getElementsByTagName('li')[0];
@@ -227,6 +234,32 @@ $('#goods').html(arr.map((v) => {
 </ul>`
 }))
 
+//邮费
+function Post() {
+    for (let i = 0; i < arr.length; i++) {
+        let opost = [];
+        opost.push(arr.map((v) => {
+            return v[6]
+        }))
+        function sor(val1, val2) {
+            if (val1 > val2) {
+                return -1;
+            } else if (val1 < val2) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+        let maxPost = opost[0].sort(sor);
+        // console.log(maxPost)
+        $('#post').html('￥' + maxPost[0])
+    }
+    if (!$('#goods ul').hasClass('hav')) {
+        $('#post').html('￥' + 0)
+    }
+}
+Post();
+
 //删除
 for (let i = 0; i < $('#goods .del').length; i++) {
     $('#goods .del').eq(i).click(function () {
@@ -234,9 +267,14 @@ for (let i = 0; i < $('#goods .del').length; i++) {
         arr.splice(i, 1)
         window.localStorage.setItem('parameter', JSON.stringify(arr))
         Sum();
+        Post();
         console.log(arr)
+        if(arr.length!=0){
+            $("#bottom .dot").show()
+        }else{
+            $("#bottom .dot").hide()
+        }
     })
-
 }
 
 // 计算总价
@@ -279,74 +317,123 @@ for (let i = 0; i < $('#count .add').length; i++) {
 }
 
 //选中和取消
-var off=true;
+var off = true;
 for (let i = 0; i < $('#goods ul li i').length; i++) {
     $('#goods ul li i').eq(i).click(function () {
-        if (off) {
+        if (off) {//取消
             $('#goods ul li i').eq(i).addClass('bag')
             $('#goods ul').eq(i).removeClass('hav')
             console.log(sum)
             Sum();
+            localStorage.setItem('readd', arr.splice(i, 1))
+            Post();
 
             $('#cartfoot .check').css({
                 'background': '#fff',
-                'border':'1px solid #ccc'
+                'border': '1px solid #ccc'
             })
-            $('#cartfoot a').css('backgroundColor','#ccc')
-        }else{
+
+        } else {//选中
             $('#goods ul li i').eq(i).removeClass('bag')
             $('#goods ul').eq(i).addClass('hav')
             console.log(sum)
             Sum();
-
+            console.log(localStorage.getItem('readd'))
+            arr.push(localStorage.getItem('readd').split(','))
+            Post();
+            $('#cartfoot button').css({'backgroundColor':'#ff0000','disabled':'false'})
         }
-        if(!$('#goods ul li i').hasClass('bag')){
+        if(!$('#goods ul').hasClass('hav')){
+            $('#cartfoot button').css({'backgroundColor':'#ccc','disabled':'true'})
+        }
+        if (!$('#goods ul li i').hasClass('bag')) {
             $('#cartfoot .check').css({
                 'background': 'url(../images/home/cart/checkmark.png) no-repeat',
                 'background-size': '100% 100%',
-                'border':'none'
+                'border': 'none'
             })
-            $('#cartfoot a').css('backgroundColor','#ff0000')
         }
-        off=!off;
+        off = !off;
     })
 }
 //全选
-var aff=true;
+var aff = true;
 
-$('#cartfoot .check').click(function(){
-    
-    if(aff){
+$('#cartfoot .check').click(function () {
+
+    if (aff) {
         $('#cartfoot .check').css({
             'background': '#fff',
-            'border':'1px solid #ccc'
+            'border': '1px solid #ccc'
         })
         $('#goods ul li i').addClass('bag')
         $('#goods ul').removeClass('hav');
-        $('#cartfoot a').css('backgroundColor','#ccc')
+        $('#cartfoot button').css({'backgroundColor':'#ccc','disabled':'true'})
+        $('#post').html('￥' + 0)
         Sum();
-    }else{
+    } else {
         $('#cartfoot .check').css({
             'background': 'url(../images/home/cart/checkmark.png) no-repeat',
             'background-size': '100% 100%',
-            'border':'none'
+            'border': 'none'
         })
         $('#goods ul li i').removeClass('bag')
         $('#goods ul').addClass('hav');
-        $('#cartfoot a').css('backgroundColor','#ff0000')
+        $('#cartfoot button').css('backgroundColor', '#ff0000')
+        Post();
         Sum();
     }
-    aff=!aff;
+    aff = !aff;
 })
 
-console.log(arr.length)
+//提示红点
+if(arr.length!=0){
+    $("#bottom .dot").show()
+}
+
+//点击去结算
+$('#cartfoot button').click(function () {
+    for (let i = 0; i < $('#goods ul').length; i++) {
+        if (!$('#goods ul').eq(i).hasClass('hav')) {
+            arr.splice(i, 1)
+        }
+    }
+    let psm=[];
+    psm.push($('#post').html().split('￥')[1])
+    psm.push($('#sum').html().split('￥')[1])
+    window.localStorage.setItem('balance',JSON.stringify(arr))//订购商品信息
+    window.localStorage.setItem('tatle',psm)//总价和邮费
+    window.location='order.html';
+    // console.log(arr)
+})
 
 //第三页 我的========================================
-$("#personal .means ul li").eq(4).click(function(){
-    window.location='collect.html'
+
+//跳到收藏
+$("#personal .means ul li").eq(4).click(function () {
+    window.location = 'collect.html'
 })
-var arys=JSON.parse(window.localStorage.getItem('arrey'));
-console.log(arys)
+
+//跳转到全部订单
+var Sorder = document.querySelectorAll('#personal .order span')[1];
+Sorder.onclick = function () {
+    window.location = 'orderlist.html?type=0';
+}
+
+//收货地址
+$('#personal .means ul li').eq(1).click(()=>{
+    window.location='address_all.html'
+})
+
+$('#personal .mylist a').click(function () {
+    window.location.href = 'http://localhost:3000/html/orderlist.html?type=' + ($(this).index() + 1);
+})
+
+var member=JSON.parse(window.localStorage.getItem('member'))//token,会员名,uid
+console.log(member)
+$('.person p span').eq(0).html(member[1])
+
+
 
 
 

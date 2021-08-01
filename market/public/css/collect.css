@@ -35,12 +35,12 @@ ul li{list-style-type: none;}
 #myshow ul li img{
     width: 100%;
     height: 25vh;
-    border: 1px solid #000;
 }
 #myshow ul li p{
     width: 100%;
     height: 5vh;
-    font-size: 2.5vh;
+    font-size: 2vh;
+    overflow: hidden;
 }
 #myshow ul li:nth-child(2){
     color: #ff0000;
@@ -57,4 +57,44 @@ ul li{list-style-type: none;}
     border: 1px solid #dd0000;
     border-radius: 1vh;
     padding: .5vh 1vh;
+}
+/* 遮罩层 */
+#del{
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+#del .tip{
+    width: 90%;
+    font-size: 2.5vh;
+    margin: 35vh auto;
+}
+#del .tip p:first-child{
+    background-color: #fff;
+    width: 100%;
+    height: 12vh;
+    line-height: 12vh;
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+    border-top-left-radius: 2vh;
+    border-top-right-radius: 2vh;
+}
+#del .tip p:nth-child(2){display: flex;justify-content: space-between;}
+#del .tip p:nth-child(2) span{
+    background-color: #fff;
+    height: 6vh;
+    line-height: 6vh;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+}
+#del .tip p:nth-child(2) span:first-child{
+    border-bottom-left-radius: 2vh;
+}
+#del .tip p:nth-child(2) span:last-child{
+    color: #1989fa;
+    border-bottom-right-radius: 2vh;
 }
