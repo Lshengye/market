@@ -20,3 +20,21 @@ function Switch(name) {
     }
 }
 Switch('password');
+
+var member = JSON.parse(window.localStorage.getItem('member'))//token,会员名,uid
+console.log(member)
+
+$('button').click(()=>{
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "http://vueshop.glbuys.com/api/home/user/modpwd?token=386777c139fd9e2ac5",
+        data: {
+            uid: member[2],
+            pwd:$('#password input').val()
+        },
+        success: function (data) {
+            console.log(data)
+        }
+    })
+})

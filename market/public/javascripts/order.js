@@ -19,3 +19,20 @@ $('#submit .all-money').html('￥'+(Number(psm[0])+Number(psm[1])))
 $('#submit span').eq(1).click(()=>{
     window.location='hasbuy.html'
 })
+
+var land=JSON.parse(window.localStorage.getItem('place'))
+console.log(land)
+$(".place div").html(`<p>收货人：<span>${land[0]}</span><span>${land[1]}</span></p>
+<p><i></i><span>${land[2]+land[3]}</span></p>`)
+if(land.length==0){
+    $('.address-null').show()
+}else{
+    $('.address-null').hide()
+}
+$('#submit span').eq(1).click(()=>{
+    window.localStorage.setItem('total',$('.all-money').html())
+    window.localStorage.setItem('mesg',JSON.stringify(goods))
+})
+$('.place').click(()=>{
+    location.href='address.html'
+})

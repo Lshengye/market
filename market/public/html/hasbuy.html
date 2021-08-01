@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
     <script src="../javascripts/jquery3.3.1.js"></script>
     <script src="../javascripts/axios.js"></script>
 </head>
+
 <body>
     <div class="header">
-        <a class="back" href="#"></a>
+        <a class="back" href="orderlist.html?type=0"></a>
         <span>下单成功</span>
     </div>
     <p>下单成功!</p>
@@ -19,16 +21,21 @@
     <button>去付款</button>
 
     <script>
-        document.querySelector('.look').onclick=function(){
-            window.location='orderlist.html?type=0'
+        document.querySelector('.look').onclick = function () {
+            window.location = 'orderlist.html?type=0'
         }
-        document.querySelector('.back').onclick=function(){
+        document.querySelector('.back').onclick = function () {
             window.history.back(-1)
         }
-        var member=JSON.parse(window.localStorage.getItem('member'))
-        axios.get('http://vueshop.glbuys.com/api/order/lastordernum?uid=696443691&token=1ec949a15fb709370f').then((res)=>{
+        var member = JSON.parse(window.localStorage.getItem('member'))
+        axios.get('http://vueshop.glbuys.com/api/order/lastordernum?uid=696443691&token=1ec949a15fb709370f').then((res) => {
             $('.ordernum').html(res.data.data.ordernum)
+            $('.look').click(() => {
+                window.localStorage.setItem('number', res.data.data.ordernum)
+            })
         })
+
     </script>
 </body>
+
 </html>

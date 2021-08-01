@@ -22,10 +22,6 @@ function Switch(name){
 
 Switch('password');
 
-var back=document.getElementsByClassName('back')[0];
-back.onclick=function(){
-    window.history.back();
-}
 
 $('#submit').click(()=>{
     setTimeout(() => {

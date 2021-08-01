@@ -33,7 +33,7 @@ ul li{list-style-type: none;}
     text-align: center;
     line-height: 16vh;
 }
-#address .place i{
+#address .place .to{
     display: block;
     width: 2.5vh;
     height: 2.5vh;
@@ -62,6 +62,32 @@ ul li{list-style-type: none;}
     border-left: 1vh solid transparent;
     border-right: 1vh solid transparent;
 }
+#address .place div{
+    padding: 2vh;
+    line-height: 6vh;
+}
+#address .place div p:first-child{
+    font-size: 2vh;
+    font-weight: bolder;
+}
+#address .place div p:first-child span{
+    margin-right: 4vh;
+}
+#address .place div p:last-child{
+    font-size: 1.5vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+#address .place div p:last-child i{
+    display: inline-block;
+    width: 2.5vh;
+    height: 3vh;
+    background: url(../images/home/cart/map.png) no-repeat;
+    background-size: 100% auto;
+    margin-right: 1vh;
+}
+
 /* 商品部分 */
 #product ul{
     height: 14vh;

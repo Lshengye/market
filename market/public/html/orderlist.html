@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +9,40 @@
     <link rel="stylesheet" href="../css/orderlist.css">
     <script src="../javascripts/jquery3.3.1.js"></script>
 </head>
+
 <body>
     <div class="header">
         <a class="back" href="index.html?type=2"></a>
         <span>全部订单</span>
     </div>
     <div id="main">
-        <ul>
+        <ul class="tab">
             <li class="active">全部订单</li>
             <li>待付款</li>
             <li>待收货</li>
             <li>待评价</li>
         </ul>
-        <div class="cont" style="display: block;">111</div>
-        <div class="cont">222</div>
+        <div id="products" class="cont" style="display: block;">
+            <!-- <div class="product">
+                <p><span>订单编号：234234</span><span>待付款</span></p>
+                <ul>
+                    <li><img src="" alt=""></li>
+                    <li>dhgodfgkldjfgbjdifojg</li>
+                    <li>x 2</li>
+                </ul>
+                <div><span>实付金额：igfi</span>
+                    <p><span>取消订单</span><span>去付款</span></p>
+                </div>
+            </div> -->
+        </div>
+        <div id="waitpay" class="cont">
+
+        </div>
         <div class="cont">333</div>
         <div class="cont">444</div>
     </div>
 
     <script src="../javascripts/orderlist.js"></script>
 </body>
+
 </html>

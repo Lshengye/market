@@ -12,7 +12,7 @@ axios({
         document.querySelector('#lately ul').innerHTML += `<li>${this.innerText}</li>`
         $('#entry').val(this.innerText)
         $('#lately').show()
-        // window.location = 'search-result.html';
+        window.location = 'search-result.html';
         window.localStorage.setItem('kword', $('#entry').val())
         window.localStorage.setItem('history',$('#lately ul').html())
     })

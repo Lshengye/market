@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/address_all.css">
+    <script src="../javascripts/jquery3.3.1.js"></script>
 </head>
 <body>
     <div class="header">
         <a class="back" href="index.html?type=2"></a>
         <span>收货地址管理</span>
+    </div>
+    <div id="place">
+        
     </div>
     <div id="btm">
         <button>+ 添加新地址</button>
@@ -19,6 +23,15 @@
         document.querySelector('#btm button').onclick=function(){
             window.location='address.html'
         }
+        var land=JSON.parse(window.localStorage.getItem('place'));
+        console.log(land)
+        $('#place').html(`<ul>
+            <li>
+                <p><span>${land[0]}</span><span>${land[1]}</span></p>
+                <p><span>[默认]</span><span>${land[2] + land[3]}</span></p>
+            </li>
+            <li><i></i></li>
+        </ul>`)
     </script>
 </body>
 </html>
