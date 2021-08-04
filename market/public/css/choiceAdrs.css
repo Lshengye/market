@@ -1,0 +1,98 @@
+*{margin: 0;padding: 0;}
+ul li{list-style-type: none;}
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3vh;
+    padding: 2vh 0;
+    border-bottom: 1px solid #f2f2f2;
+    position: relative;
+}
+.header .back{
+    display: block;
+    width: 6vh;
+    height: 6vh;
+    background: url(../images/home/goods/back.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.add{
+    padding: 0 2vh;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D3C6BE;
+    font-size: 2.5vh;
+}
+#places ul{width: 100%;border-bottom: 1px solid #C6C6C6;}
+#places ul li:first-child{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto;
+    border-bottom: 1px dashed #ccc;
+}
+#places ul li:first-child div{
+    width: 100%;
+}
+
+/* 默认打勾 */
+#places ul li:first-child i{
+    display: block;
+    /* display: none; */
+    width: 10%;
+    height: 6vh;
+    background: url(../images/home/cart/gou.png) no-repeat;
+    background-size: 70% auto;
+    background-position: center;
+    margin-right: 1vh;
+}
+#places ul li:first-child div p:first-child{
+    border-bottom: 1px solid #ccc;
+    font-size: 2vh;
+    width: 100%;
+    padding: 1.5vh 0;
+}
+#places ul li:first-child div p:first-child span{
+    margin-right: 2vh;
+}
+/* 默认提示 */
+#places ul li:first-child div p:nth-child(2) span{
+    font-size: 2vh;color: #fff;display: inline-block;background-color: #FDB709;border-radius: .5vh;padding:0 .5vh;
+    /* display: none; */
+}
+
+#places ul li:first-child div p:nth-child(2){
+    width: 100%;
+    padding: 1.5vh 0;
+    font-size: 2.5vh;
+}
+#places ul li:nth-child(2){width: 90%;height: 4vh;
+    margin: 0 auto;position: relative;}
+#places ul .revise{
+    display: block;
+    width: 3vh;
+    height: 3vh;
+    background: url(../images/home/cart/edit.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 6vh;
+    top: .5vh;
+}
+#places ul .dele{
+    display: block;
+    width: 3vh;
+    height: 3vh;
+    background: url(../images/home/cart/del.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 0;
+    top: .5vh;
+}

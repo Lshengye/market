@@ -186,8 +186,8 @@ axios({
                 arrs=[];
             }
             var arr = [m, t, p, c, s, n,post];
-            arrs.push(arr);
             console.log(typeof arrs)
+            arrs.push(arr);
             window.localStorage.setItem('parameter', JSON.stringify(arrs));
             console.log(arrs)
         }

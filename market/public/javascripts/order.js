@@ -20,7 +20,7 @@ $('#submit span').eq(1).click(()=>{
     window.location='hasbuy.html'
 })
 
-var land=JSON.parse(window.localStorage.getItem('place'))
+var land=JSON.parse(window.localStorage.getItem('land'))
 console.log(land)
 $(".place div").html(`<p>收货人：<span>${land[0]}</span><span>${land[1]}</span></p>
 <p><i></i><span>${land[2]+land[3]}</span></p>`)
@@ -34,5 +34,5 @@ $('#submit span').eq(1).click(()=>{
     window.localStorage.setItem('mesg',JSON.stringify(goods))
 })
 $('.place').click(()=>{
-    location.href='address.html'
+    location.href='choiceAdrs.html'
 })

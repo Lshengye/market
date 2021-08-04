@@ -339,13 +339,13 @@ for (let i = 0; i < $('#goods ul li i').length; i++) {
             $('#goods ul').eq(i).addClass('hav')
             console.log(sum)
             Sum();
-            console.log(localStorage.getItem('readd'))
+            // console.log(localStorage.getItem('readd'))
             arr.push(localStorage.getItem('readd').split(','))
             Post();
             $('#cartfoot button').css({ 'backgroundColor': '#ff0000', 'disabled': 'false' })
         }
         if (!$('#goods ul').hasClass('hav')) {
-            $('#cartfoot button').css({ 'backgroundColor': '#ccc', 'disabled': 'true' })
+            $('#cartfoot button').css({ 'backgroundColor': '#ccc'})
         }
         if (!$('#goods ul li i').hasClass('bag')) {
             $('#cartfoot .check').css({
@@ -369,10 +369,10 @@ $('#cartfoot .check').click(function () {
         })
         $('#goods ul li i').addClass('bag')
         $('#goods ul').removeClass('hav');
-        $('#cartfoot button').css({ 'backgroundColor': '#ccc', 'disabled': 'true' })
+        $('#cartfoot button').css({ 'backgroundColor': '#ccc' })
         $('#post').html('￥' + 0)
         Sum();
-        $('#cartfoot button').css({ 'backgroundColor': '#ccc', 'disabled': 'true' })
+        $('#cartfoot button').css({ 'backgroundColor': '#ccc'})
     } else {
         $('#cartfoot .check').css({
             'background': 'url(../images/home/cart/checkmark.png) no-repeat',
@@ -381,18 +381,21 @@ $('#cartfoot .check').click(function () {
         })
         $('#goods ul li i').removeClass('bag')
         $('#goods ul').addClass('hav');
-        $('#cartfoot button').css('backgroundColor', '#ff0000')
+        $('#cartfoot button').css({'backgroundColor': '#ff0000','disabled':'false'})
         Post();
         Sum();
     }
     aff = !aff;
 })
 
+
 //提示红点
 if (arr.length != 0) {
     $("#bottom .dot").show()
+} else{
+    $('#cartfoot input').css({ 'backgroundColor': '#ccc', 'disabled': 'true' })
 }
-
+    
 
 //第三页 我的========================================
 
@@ -420,11 +423,12 @@ $(function () {
                 $('#index-login').hide();
                 $('#top a:last').show();
 
-                //点击去结算
+                //购物车点击去结算
                 $('#cartfoot button').click(function () {
                     for (let i = 0; i < $('#goods ul').length; i++) {
                         if (!$('#goods ul').eq(i).hasClass('hav')) {
                             arr.splice(i, 1)
+                            
                         }
                     }
                     let psm = [];
@@ -466,35 +470,41 @@ $(function () {
                     })
                 }
 
-
                 //收货地址
                 $('#personal .means ul li').eq(1).click(() => {
                     window.location = 'address_all.html'
                 })
+
+                if ($('.means a').html() == '安全退出') {
+                    $('.means a').click(() => {
+                        $.ajax({
+                            type: "POST",
+                            dataType: "json",
+                            url: "http://vueshop.glbuys.com/api/home/user/safeout?token=1ec949a15fb709370f",
+                            data: {
+                                uid: member[2]
+                            },
+                            success: function (data) {
+                                console.log(data)
+                                if (data.code == '200') {
+                                    $('.means a').html("登录/注册");
+                                    $('.person p span').eq(0).html('昵称');
+                                    //清空购物车
+                                    arr=[]
+                                    window.localStorage.setItem('parameter',JSON.stringify(arr))
+                                }
+                            }
+                        })
+                        $('goods').hide();
+                        window.location.reload();
+                    })
+                }
             }
         }
     })
 })
-if ($('.means a').html() == '安全退出') {
-    $('.means a').click(() => {
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "http://vueshop.glbuys.com/api/home/user/safeout?token=1ec949a15fb709370f",
-            data: {
-                uid: member[2]
-            },
-            success: function (data) {
-                if (data.code == 200) {
-                    $('.means a').html("登录/注册");
-                    $('.person p span').eq(0).html('昵称')
-                }
-            }
-        })
-        window.location.reload();
-    })
-}
-if ($('.means a').html() == '登录/注册') {
+
+if ($('.person p span').eq(0).html() == '昵称') {
     $('#personal .means ul li').click(() => {
         window.location = 'login.html'
     })
@@ -507,10 +517,11 @@ if ($('.means a').html() == '登录/注册') {
     $('#cartfoot button').click(() => {
         location.href = 'login.html'
     })
-    $('.means a').click(() => {
+    $('.order span').eq(1).click(() => {
         location.href = 'login.html'
     })
 }
+
 
 
 

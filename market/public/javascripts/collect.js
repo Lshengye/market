@@ -11,21 +11,17 @@ $('#myshow').html(arys.map((v) => {
 </ul>`
 }))
 
-
-
 //点击删除
 
 for (let i = 0; i < $('#myshow .del').length; i++) {
     $('#myshow .del').eq(i).click(function () {
+        $('.tip').show();
+        $('.tip').fadeOut(2000);
         arys.splice(i, 1);
         window.localStorage.setItem('arrey', JSON.stringify(arys))
         $('#myshow').load(location.href + '#myshow');
     })
 }
-
-$('#del .tip span').eq(0).click(function () {
-    $('#del').fadeOut(300)
-})
 
 //点击去购买
 for (let i = 0; i < $('#myshow .gobuy').length; i++) {

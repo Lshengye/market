@@ -99,3 +99,63 @@ ul li{list-style-type: none;}
     margin-left: 2vh;
     text-align: center;
 }
+
+/* 评价 */
+#evaluate .product{
+    border-bottom: 1px solid #ccc;
+}
+#evaluate .product p:first-child{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vh;
+    border-bottom: 1px solid #f2f2f2;
+    line-height: 6vh;
+    font-size: 2vh;
+}
+#evaluate .product .list ul{
+    display: flex;
+    padding: 1vh;
+    height: 10vh;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+}
+#evaluate .product .list ul li:first-child,.product ul li:nth-child(2){
+    height: 8vh;
+}
+#evaluate .product .list ul li:first-child img{
+    border: 1px solid #000;
+    width: 8vh;
+    height: 8vh;
+}
+#evaluate .product .list ul li:first-child{
+    width: 20%;
+}
+#evaluate.product .list ul li:nth-child(2){
+    width: 70%;
+    font-size: 2vh;
+}
+#evaluate .product .list ul li:nth-child(3){
+    color: #777;
+    position: absolute;
+    right: 1vh;
+    bottom: 1vh;
+    font-size: 1.5vh;
+}
+#evaluate .product div:last-child{
+    height: 6vh;
+    padding: 0 1vh;
+    display: flex;
+    align-items: center;
+    font-size: 2vh;
+}
+#evaluate .product div:last-child span{
+    display: inline-block;
+    border: 1px solid #dd0000;
+    border-radius: .5vh;
+    width: 10vh;
+    height: 4vh;
+    line-height: 4vh;
+    margin-left: 80%;
+    text-align: center;
+}

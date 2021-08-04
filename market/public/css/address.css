@@ -51,3 +51,13 @@ button{
     margin: 2.5vh auto;
     padding: 1vh 0;
 }
+.tip{
+    width: 20vh;
+    margin: 4vh auto;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: .5vh;
+    padding: .5vh 1vh;
+    text-align: center;
+    display: none;
+}

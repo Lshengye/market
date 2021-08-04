@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/choiceAdrs.css">
+    <script src="../javascripts/jquery3.3.1.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <a class="back" href="order.html"></a>
+        <span>选择收货地址</span>
+    </div>
+    <p class="add"><span>配送地址</span><span>+添加收货地址</span></p>
+    <div id="places">
+
+    </div>
+
+    <script>
+        $('.add span').eq(1).click(() => {
+            location.href = 'address.html'
+        })
+        var place = JSON.parse(window.localStorage.getItem('place'))
+        console.log(place)
+        function Reset() {
+            $('#places').html(place.map((v) => {
+                return `<ul>
+            <li>
+                <i class="right"></i>
+                <div>
+                    <p><span>${v[0]}</span><span>${v[1]}</span></p>
+                    <p><span class="mo">默认</span>${v[2] + v[3]}</p>
+                </div>
+            </li>
+            <li><span class="revise"></span><span class="dele"></span></li>
+        </ul>`
+            }))
+        }
+        Reset();
+
+        for (let i = 0; i < place.length; i++) {
+            if (place[i][4] != 1) {
+                
+                $('#places .right').eq(i).hide()
+                $('#places .mo').eq(i).hide()
+            }
+        }
+        for (let i = 0; i < $('.dele').length; i++) {
+            $('#places ul').eq(i).find('li').eq(0).click(() => {
+                window.localStorage.setItem('land', JSON.stringify(place[i]))
+                location.href = 'order.html'
+            })
+        }
+        for (let i = 0; i < $('.dele').length; i++) {
+            $('#places .dele').eq(i).click(() => {
+                place.splice(i, 1)
+                window.localStorage.setItem('place', JSON.stringify(place))
+                Reset();
+                console.log(place)
+            })
+        }
+        for (let i = 0; i < $('#places .revise').length; i++) {
+            $('#places .revise').eq(i).click(() => {
+                window.localStorage.setItem('newplace', JSON.stringify(place[i])) 
+                console.log(place[i])
+                $('#places ul').eq(i).hide()
+                // Reset();
+                location.href='address.html'            
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>

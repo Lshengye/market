@@ -12,7 +12,7 @@
 
 <body>
     <div class="header">
-        <a class="back" href="orderlist.html?type=0"></a>
+        <a class="back" href="#"></a>
         <span>下单成功</span>
     </div>
     <p>下单成功!</p>
@@ -24,15 +24,15 @@
         document.querySelector('.look').onclick = function () {
             window.location = 'orderlist.html?type=0'
         }
-        document.querySelector('.back').onclick = function () {
-            window.history.back(-1)
-        }
         var member = JSON.parse(window.localStorage.getItem('member'))
-        axios.get('http://vueshop.glbuys.com/api/order/lastordernum?uid=696443691&token=1ec949a15fb709370f').then((res) => {
+        axios.get('http://vueshop.glbuys.com/api/order/lastordernum?uid='+member[2]+'&token=1ec949a15fb709370f').then((res) => {
             $('.ordernum').html(res.data.data.ordernum)
             $('.look').click(() => {
                 window.localStorage.setItem('number', res.data.data.ordernum)
             })
+        })
+        $('.back').click(()=>{
+            window.history.go(-1)
         })
 
     </script>

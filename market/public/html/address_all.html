@@ -25,13 +25,21 @@
         }
         var land=JSON.parse(window.localStorage.getItem('place'));
         console.log(land)
-        $('#place').html(`<ul>
+        $('#place').html(land.map((v)=>{
+            return `<ul>
             <li>
-                <p><span>${land[0]}</span><span>${land[1]}</span></p>
-                <p><span>[默认]</span><span>${land[2] + land[3]}</span></p>
+                <p><span>${v[0]}</span><span>${v[1]}</span></p>
+                <p><span class='mo'>[默认]</span><span>${v[2] + v[3]}</span></p>
             </li>
             <li><i></i></li>
-        </ul>`)
+        </ul>`}))
+        for (let i = 0; i < land.length; i++) {
+            if (land[i][4] == 1) {
+                $('.mo').eq(i).show()
+            } else {
+                $('.mo').eq(i).hide()
+            }
+        }
     </script>
 </body>
 </html>

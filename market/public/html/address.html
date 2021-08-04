@@ -10,7 +10,7 @@
     <script src="../javascripts/jquery3.3.1.js"></script>
     <script src="../javascripts/city.js"></script>
     <script src="../javascripts/picker.min.js"></script>
-    <script src="../javascripts/jquery3.3.1.js"></script>
+    <script src="../javascripts/axios.js"></script>
 </head>
 
 <body>
@@ -19,14 +19,15 @@
         <span>添加收货地址</span>
     </div>
     <ul class="add">
-        <li><span>收货人</span><input type="text" placeholder="收货人姓名" /></li>
-        <li><span>联系方式</span><input type="tele" placeholder="联系人手机号" /></li>
+        <li><span>收货人</span><input class="name" type="text" placeholder="收货人姓名" /></li>
+        <li><span>联系方式</span><input class="phone" type="tele" placeholder="联系人手机号" /></li>
         <li><span>所在区域</span><a href="JavaScript:;" id="sel_city">请选择所在地区
         </a></li>
-        <li><span>详细地址</span><input type="text" placeholder="街道详细地址" /></li>
-        <li><span>设置为默认地址</span><input type="checkbox" /></li>
+        <li><span>详细地址</span><input class="address" type="text" placeholder="街道详细地址" /></li>
+        <li><span>设置为默认地址</span><input class="default" type="checkbox" /></li>
     </ul>
-    <button>保存</button>
+    <button class="save">保存</button>
+    <div class="tip"></div>
     
     <script src="../javascripts/address.js"></script>
     <script>
