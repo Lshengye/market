@@ -22,7 +22,6 @@ function Switch(name){
 
 Switch('password');
 
-
 $('#submit').click(()=>{
     setTimeout(() => {
         $('.talk').hide();
